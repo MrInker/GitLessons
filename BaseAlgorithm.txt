@@ -9,7 +9,12 @@ git add .
 git commit -m "Task666 complit"
 
 git push origin  (не сработало так как нет такой ветки в репке не Гитхабе)
-git push --set-upstream Inker_Task666   Добавили Ветку на Гитхабе
+ git push --set-upstream Inker_Task666   Добавили Ветку на Гитхабе
+ И потом делаем:
+ git push origin
+
+ИЛИ сразу делаем:
+ git push -u origin Inker_Task666
 
 На гитхабе отправили запрос на слияние.
 когда слили:
