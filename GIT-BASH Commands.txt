@@ -56,6 +56,7 @@ git remote add origin https://github.com/MrInker/git-sample-1.git
 git branch -M main  переименование главной ветки. На гитхабе, по умолчанию main. В Гите по умолчанию master
 git push -u origin main
 
+/* в работе:
 
   267  git add .
   268  git commit -m "Russian Lang"
@@ -156,7 +157,7 @@ git push -u origin main
   363  git status
   364  git stash list
 
-
+*/
 
 
 alias gitlog='git log --graph --pretty=oneline --abbrev-commit --all --decorate'
