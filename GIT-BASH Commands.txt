@@ -1,0 +1,191 @@
+перечень коммманд
+
+
+ls
+help
+
+git --version
+git config --global user.name "Mr.Inker"
+git config --global user.email "leviarius@gmail.com"
+
+cd eugeny_sklyar
+cd Projects
+mkdir Projects
+cd Projects
+mkdir git-sample-1
+cd git-sample-1/
+
+git init (создание репзитария в конкретной папке)
+git config user.name "Test User" (имя пользователя для этой ветки)
+git config user.email "leviafan_13@mail.ru" (почта для этой ветки)
+
+git add test.txt - индексация файла
+gitk - графический интерфейс, для просмотра коммитов
+git commit -m "First commit" - создание коммита сразу с комментарием
+
+git status - запрос статуса репозитария
+
+git add * (для всех файлов)
+git add . (для файлов в текущей дирректории)
+git log   ( F-вперед B-назад Q-выход )
+git log --pretty=oneline  (если мульен коммитов - не выведет все)
+git log --pretty=oneline --max-count=3 (выводит только 3 последних коммита)
+git log --pretty=oneline --all (выведет все коммиты)
+git log --pretty=oneline --author="Test User" (все коммиты конкретного автора)
+git log --pretty=format:"%h - %s : %ad [ %an ]"  (где %h которкий хэш, %s комментарий, %ad дата коммита, %an автор коммита)
+git log --pretty=format:"%h - %s : %ad [ %an ]" --date=short
+git log --pretty=format:"%h %ad | %s" --date=short
+git checkout 753d518 - поставить HEAD на коммит с этим хэшом
+git checkout master - вернутся к последнему коммиту
+git reset HEAD test.txt - сброс индексации для конкретного файла.
+git checkout test.txt - возврат конкретного файка к состоянию HEAD
+git revert HEAD --no-edit (откат головного коммита на шаг назад)
+
+git revert 7ef16f045120fc0c52a7d1aaa17192358a28396c --no-edit вызвало конфликт слияния, отредактировали файл:
+	-git add test.txt
+	-git revert --continue
+	
+git branch  -просмотр всех активных веток
+git checkout -b NewBranch   создание новой ветки , и переключение на нее
+git checkout master - переключение на ветку мастер
+
+
+git merge dev - слияние веток. в данном случае из master делали слияние с dev.
+	если конфликт слияния, то редактируем файл, какой он должен быть в итоге.
+	потом индексируем его: 
+	git add dev.txt
+	потом делаем коммит прямор из слияние, просто:
+	git commit
+	
+	
+  263  git remote add origin https://github.com/MrInker/git-sample-1.git
+  264  git branch -M main
+  265  git branch
+  266  git push -u origin main
+  267  git add .
+  268  git commit -m "Russian Lang"
+  269  git push -u origin main
+  270  git add .
+  271  git commit -m "Russian Lang 2"
+  272  git push -u origin main
+  273  git add .
+  274  git commit -m "Russian Lang 3"
+  275  git push -u origin main
+  276  git push
+  277  git branch
+  278  git checkout NewBranch
+  279  git status
+  280  git push origin NewBranch
+  281  git add .
+  282  git commit -m "Russian Lang in NewBranch"
+  283  git push
+  284  git push origin NewBranch
+  285  git pull origin NewBranch
+  286  git pull origin NewBranch
+  287  ls
+  288  nano test.txt
+  289  git add .
+  290  git commit -m "test rebase with Github"
+  291  git log
+  292  git pull --rebase origin NewBranch
+  293  git status
+  294  git log
+  295  git checkout main
+  296  ls
+  297  nano README.md
+  298  git add .
+  299  git commit -m "Plus README in MAIN branch"
+  300  git push
+  301  git push origin main
+  302  git pull --rebase origin main
+  303  git push
+  304  git status
+  305  git pull --rebase origin main
+  306  git stash
+  307  git pull --rebase origin main
+  308  git status
+  309  git stash pop
+  310  git status
+  311  git stash list
+  312  git stash
+  313  git status
+  314  git stash
+  315  git stash list
+  316  git stash show
+  317  git stash apply
+  318  git stash list
+  319  git status
+  320  git stash drop
+  321  git status
+  322  git stash list
+  323  git stash pop
+  324  git stash list
+  325  git stash
+  326  git status
+  327  git stash list
+  328  git stash pop
+  329  git add .
+  330  git commit -m "ALL apply"
+  331  git push
+  332  git status
+  333  git stash
+  334  git stash clear
+  335  git status
+  336  git status
+  337  git restore index.htm
+  338  git status
+  339  git status
+  340  git status
+  341  git restore dev.txt
+  342  git status
+  343  git remote
+  344  git remote
+  345  git remote -v
+  346  git status
+  347  git remote -v
+  348  cd ..
+  349  clea
+  350  clear
+  351  cd HW-09/
+  352  git init
+  353  git clone https://github.com/JuliaSKLR/homework9
+  354  ls
+  355  git log
+  356  cd homework9/
+  357  git log
+  358  cd ..
+  359  cd ..
+  360  git clone https://github.com/JuliaSKLR/homework9
+  361  cd homework9/
+  362  git log
+  363  git status
+  364  git stash list
+
+
+
+
+alias gitlog='git log --graph --pretty=oneline --abbrev-commit --all --decorate'
+alias gst='git status'
+
+git reset --hard HEAD~ полностью удаляет последний коммит
+git reset --hard HEAD~3 полностью удаляет ТРИ последних коммита
+
+
+git commit --amend  меняет текущий коммит, без создания нового
+
+git reset --soft HEAD~3 удаляет записи о трех последних коммитах, при этом осталяя файлы от последней версии.
+			при этом необхъодимо либо сделать новый коммит, либо закоммитить изменения текущего через git commit --amend
+
+ 
+ 
+Базовый алгоритм работы на дядю с гитхабом:
+
+git clone https:\...  зашружаем себе проект
+git checkout -b Inker_Task666  делаем свою ветку
+работаем в своей ветке, все меняем программим.
+
+Индексируем и коммитим:
+git add .
+git commit -m "Task666 complit"
+
+git push origin  (не сработало
