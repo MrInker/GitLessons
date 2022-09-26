@@ -145,6 +145,9 @@ git push -u origin main
 
 alias gitlog='git log --graph --pretty=oneline --abbrev-commit --all --decorate'
 alias gst='git status'
+Алиасы хранятся, под виндой, тут: C:\Program Files\Git\etc\profile.d\aliases.sh
+
+
 
 git reset --hard HEAD~ полностью удаляет последний коммит
 git reset --hard HEAD~3 полностью удаляет ТРИ последних коммита
