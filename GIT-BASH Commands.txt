@@ -52,46 +52,31 @@ git merge dev - слияние веток. в данном случае из mas
 	git commit
 	
 	
-git remote add origin https://github.com/MrInker/git-sample-1.git
+git remote add origin https://github.com/...
 git branch -M main  переименование главной ветки. На гитхабе, по умолчанию main. В Гите по умолчанию master
 git push -u origin main
 
 /* в работе:
 
-  267  git add .
-  268  git commit -m "Russian Lang"
-  269  git push -u origin main
-  270  git add .
-  271  git commit -m "Russian Lang 2"
-  272  git push -u origin main
-  273  git add .
-  274  git commit -m "Russian Lang 3"
-  275  git push -u origin main
+
+
   276  git push
   277  git branch
   278  git checkout NewBranch
   279  git status
   280  git push origin NewBranch
-  281  git add .
-  282  git commit -m "Russian Lang in NewBranch"
+
   283  git push
   284  git push origin NewBranch
   285  git pull origin NewBranch
   286  git pull origin NewBranch
-  287  ls
-  288  nano test.txt
-  289  git add .
-  290  git commit -m "test rebase with Github"
+
   291  git log
   292  git pull --rebase origin NewBranch
   293  git status
   294  git log
   295  git checkout main
-  296  ls
-  297  nano README.md
-  298  git add .
-  299  git commit -m "Plus README in MAIN branch"
-  300  git push
+
   301  git push origin main
   302  git pull --rebase origin main
   303  git push
@@ -120,8 +105,6 @@ git push -u origin main
   326  git status
   327  git stash list
   328  git stash pop
-  329  git add .
-  330  git commit -m "ALL apply"
   331  git push
   332  git status
   333  git stash
@@ -144,14 +127,14 @@ git push -u origin main
   350  clear
   351  cd HW-09/
   352  git init
-  353  git clone https://github.com/JuliaSKLR/homework9
+  353  git clone https://github.com/...
   354  ls
   355  git log
   356  cd homework9/
   357  git log
   358  cd ..
   359  cd ..
-  360  git clone https://github.com/JuliaSKLR/homework9
+  360  git clone https://github.com/...
   361  cd homework9/
   362  git log
   363  git status
@@ -175,4 +158,7 @@ git reset --soft HEAD~3 удаляет записи о трех последни
 
 git tag v_1.0.0 Тэг должен быть без пробелов. ДОбавляется к текущему Коммиту.
 git tag просмотреть список тэгов
-git push origin v_1.0.0 Пушит на гитхаб только тэг
+git push origin v_1.0.0 Пушит на гитхаб  тэг
+
+git tag -d v_1.0.0 удаляет тэг в локальном репозитарии
+git push origin  --delete v_1.0.0 удаляет тэг на удаленном репозитарии
