@@ -6,6 +6,10 @@ ssh-keygen
 cat .ssh/id-rsa.pub
 github - user - settings - SSH and GPG keys - New SSH key
 
+если репа была склонирована с помощью HTTPS, то или удалить и перекачать через SSH ссылку, либо поменять ссылку в локальном гите:
+заходим в папку проекта:
+git remote -v   - покажет текущую ссылку, если https, то:
+git remote set-url origin SSH-LINK
 
 Commit это как снимок, снэпшот состояния
 Не проиндексированные (add) файлы и изменения не закоммитятся
