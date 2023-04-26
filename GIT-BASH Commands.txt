@@ -1,5 +1,12 @@
 перечень коммманд
 
+подключаемся по shh linux
+ssh-keygen
+копируем ключ из файла id-rsa.pub:
+cat .ssh/id-rsa.pub
+github - user - settings - SSH and GPG keys - New SSH key
+
+
 Commit это как снимок, снэпшот состояния
 Не проиндексированные (add) файлы и изменения не закоммитятся
 
